@@ -4,57 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Anniversary</title>
   </head>
   <body class="bg-pink-300">
-    <div class="bg-pink-300 w-full p-4 flex justify-between items-center">
-      <p class="font-bold text-pink-50 text-xl">Anniversary 4 Month</p>
-      <div class="flex gap-6 items-center">
+    <!-- Navbar -->
+    <div class="bg-pink-300 w-full p-4 flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-0">
+      <p class="font-bold text-pink-50 text-xl text-center sm:text-left">Anniversary 4 Month</p>
+      <div class="flex flex-wrap gap-4 items-center justify-center">
         <a href="#" class="text-pink-50 hover:text-white">Penulis</a>
         <a href="#" class="text-pink-50 hover:text-white">Anggi Syafa'ah</a>
         <a href="#" class="text-pink-50 hover:text-white">Tentang</a>
-        <a
-          href="#"
-          class="bg-pink-200 text-pink-900 px-3 py-1 rounded hover:bg-pink-400"
-          >Musik</a
-        >
+        <a href="#" class="bg-pink-200 text-pink-900 px-3 py-1 rounded hover:bg-pink-400">Musik</a>
       </div>
     </div>
-    <div class="p-3 flex flex-col items-center h-screen">
-      <div class="flex items-center gap-5 m-0">
-        <img
-          src="IMG-20250924-WA0049.jpg"
-          alt=""
-          class="w-50 h-auto -rotate-45 shadow-md rounded"
-        />
-        <img
-          src="IMG-20250924-WA0055.jpg"
-          alt=""
-          class="w-50 rotate-45 shadow-md h-auto rounded"
-        />
-        <img
-          src="IMG-20250924-WA0042.jpg"
-          alt=""
-          class="w-50 h-auto shadow-md rounded"
-        />
-        <img
-          src="IMG-20250924-WA0038.jpg"
-          alt=""
-          class="w-50 h-auto -rotate-45 shadow-md rounded"
-        />
-        <img
-          src="IMG-20250924-WA0054.jpg"
-          alt=""
-          class="w-50 rotate-45 shadow-md rounded"
-        />
+
+    <!-- Konten utama -->
+    <div class="p-3 flex flex-col items-center min-h-screen">
+      <!-- Gambar scroll horizontal di mobile -->
+      <div class="flex gap-4 overflow-x-auto max-w-full py-4">
+        <img src="IMG-20250924-WA0049.jpg" alt="" class="w-40 sm:w-48 h-auto -rotate-45 shadow-md rounded" />
+        <img src="IMG-20250924-WA0055.jpg" alt="" class="w-40 sm:w-48 rotate-45 shadow-md h-auto rounded" />
+        <img src="IMG-20250924-WA0042.jpg" alt="" class="w-40 sm:w-48 h-auto shadow-md rounded" />
+        <img src="IMG-20250924-WA0038.jpg" alt="" class="w-40 sm:w-48 h-auto -rotate-45 shadow-md rounded" />
+        <img src="IMG-20250924-WA0054.jpg" alt="" class="w-40 sm:w-48 rotate-45 shadow-md rounded" />
       </div>
-      <div class="flex flex-col items-center text-center">
-        <img
-          src="anngi.jpg"
-          alt=""
-          class="rounded-full h-auto w-50 shadow-lg"
-        />
-        <h1 class="text-pink-50 font-bold">Anggi Syafa'ah</h1>
-        <p class="text-pink-50 font-mono">
+
+      <!-- Konten teks dan gambar profil -->
+      <div class="flex flex-col items-center text-center px-4 max-w-xl">
+        <img src="anngi.jpg" alt="" class="rounded-full w-40 sm:w-48 h-auto shadow-lg" />
+        <h1 class="text-pink-50 font-bold text-lg sm:text-xl mt-3">Anggi Syafa'ah</h1>
+        <p class="text-pink-50 font-mono text-sm sm:text-base mt-2">
           Dia adalah cewe imut, lucu, cantik, baik, pokoknya dia adalah manusia
           paling sempurna yang sekarang menjadi cewe aku. Dan suda berjalan
           selama 4 bulan... ini adalah hari Anniversary kita yang ke-4, dia
@@ -73,29 +52,37 @@
           terjadi padaku.. Teimakasi sayang suda hadir di hidup aku, jangan
           pergi yaa sayanggggg. Love u!!
         </p>
-        <button class="bg-pink-400 p-1 text-center rounded text-white font-bold w-30 focus:outline-2 outline-pink-50 hover:bg-pink-300" id="Play">Play music</button>
+
+        <!-- Tombol dan audio -->
+        <button
+          class="bg-pink-400 mt-4 p-2 text-center rounded text-white font-bold w-40 focus:outline-2 outline-pink-50 hover:bg-pink-300"
+          id="Play"
+        >
+          Play music
+        </button>
         <audio id="Sound" loop>
           <source src="sound.mp3" type="audio/mpeg" />
         </audio>
       </div>
     </div>
-  </body>
-  <script>
-    const audio = document.getElementById("Sound");
-    const btn = document.getElementById("Play");
-    btn.addEventListener("click", async () => {
-      try {
-        if (audio.paused) {
-        await audio.play();
-        btn.textContent = "Pause";
-      } else {
-        audio.pause();
-        btn.textContent = "Play music";
-      }
-      } catch (error) { 
-        alert("Gagal memutar musik: " + error); 
-      }
-    });
-  </script>
-</html>
 
+    <!-- Script Musik -->
+    <script>
+      const audio = document.getElementById("Sound");
+      const btn = document.getElementById("Play");
+      btn.addEventListener("click", async () => {
+        try {
+          if (audio.paused) {
+            await audio.play();
+            btn.textContent = "Pause";
+          } else {
+            audio.pause();
+            btn.textContent = "Play music";
+          }
+        } catch (error) {
+          alert("Gagal memutar musik: " + error);
+        }
+      });
+    </script>
+  </body>
+</html>

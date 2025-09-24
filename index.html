@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="bg-pink-300">
+    <div class="bg-pink-300 w-full p-4 flex justify-between items-center">
+      <p class="font-bold text-pink-50 text-xl">Anniversary 4 Month</p>
+      <div class="flex gap-6 items-center">
+        <a href="#" class="text-pink-50 hover:text-white">Penulis</a>
+        <a href="#" class="text-pink-50 hover:text-white">Anggi Syafa'ah</a>
+        <a href="#" class="text-pink-50 hover:text-white">Tentang</a>
+        <a
+          href="#"
+          class="bg-pink-200 text-pink-900 px-3 py-1 rounded hover:bg-pink-400"
+          >Musik</a
+        >
+      </div>
+    </div>
+    <div class="p-3 flex flex-col items-center h-screen">
+      <div class="flex items-center gap-5 m-0">
+        <img
+          src="foto/IMG-20250924-WA0049.jpg"
+          alt=""
+          class="w-50 h-auto -rotate-45 shadow-md rounded"
+        />
+        <img
+          src="foto/IMG-20250924-WA0055.jpg"
+          alt=""
+          class="w-50 rotate-45 shadow-md h-auto rounded"
+        />
+        <img
+          src="foto/IMG-20250924-WA0042.jpg"
+          alt=""
+          class="w-50 h-auto shadow-md rounded"
+        />
+        <img
+          src="foto/IMG-20250924-WA0038.jpg"
+          alt=""
+          class="w-50 h-auto -rotate-45 shadow-md rounded"
+        />
+        <img
+          src="foto/IMG-20250924-WA0054.jpg"
+          alt=""
+          class="w-50 rotate-45 shadow-md rounded"
+        />
+      </div>
+      <div class="flex flex-col items-center text-center">
+        <img
+          src="foto/anngi.jpg"
+          alt=""
+          class="rounded-full h-auto w-50 shadow-lg"
+        />
+        <h1 class="text-pink-50 font-bold">Anggi Syafa'ah</h1>
+        <p class="text-pink-50 font-mono">
+          Dia adalah cewe imut, lucu, cantik, baik, pokoknya dia adalah manusia
+          paling sempurna yang sekarang menjadi cewe aku. Dan suda berjalan
+          selama 4 bulan... ini adalah hari Anniversary kita yang ke-4, dia
+          bukan sekedar cewe biasa. Tapi, dia cewe hebat yang sudah mengalami
+          berbagai kesulitan namun dia bisa mengontrol emosinya... Sayanggg aku
+          buat ini pakai tangan aku sendiri, ngetik sendiri dan semuanya
+          sendiri. Sesuai yang aku bilang, aku bakalan buatin kamu kejutan,
+          walaupun ini tida bagus tetapi ini murni dari tangan aku dan ini murni
+          dari cowo kamu!! <br />
+          Sungguh tida disangka aku mempunyai cewe secantik dan sebaik kamu...
+          aku bukanlah siapa siapa dan aku tida punya apa apa, bahkan aku tida
+          punya siapa siapa, oiya lagu yang sekarang dede dengerin itu adalah
+          lagu yang aku pilih karena sangat mirip dengan kisah kita. Lagu ini
+          berjudul "Sekarang hingga nanti kita tua" ini lagu kesukaaan dia yang
+          aku masukin disini karena lagu itu juga sangat relate dengan apa yang
+          terjadi padaku.. Teimakasi sayang suda hadir di hidup aku, jangan
+          pergi yaa sayanggggg. Love u!!
+        </p>
+        <button class="bg-pink-400 p-1 text-center rounded text-white font-bold w-30 focus:outline-2 outline-pink-50 hover:bg-pink-300" id="Play">Play music</button>
+        <audio id="Sound" loop>
+          <source src="sound.mp3" type="audio/mpeg" />
+        </audio>
+      </div>
+    </div>
+  </body>
+  <script>
+    const audio = document.getElementById("Sound");
+    const btn = document.getElementById("Play");
+    btn.addEventListener("click", async () => {
+      try {
+        if (audio.paused) {
+        await audio.play();
+        btn.textContent = "Pause";
+      } else {
+        audio.pause();
+        btn.textContent = "Play music";
+      }
+      } catch (error) { 
+        alert("Gagal memutar musik: " + error); 
+      }
+    });
+  </script>
+</html>
